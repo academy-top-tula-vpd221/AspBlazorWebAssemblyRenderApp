@@ -1,0 +1,23 @@
+﻿@page "/counter"
+@rendermode InteractiveAuto
+
+<h1>Counter:</h1>
+<button @onclick="DecrementCount">-</button>
+<span>@count</span>
+<button @onclick="IncrementCount">+</button>
+
+@code {
+    int count = 0;
+    void IncrementCount(MouseEventArgs e)
+    {
+        if (e.CtrlKey)
+            count += 10;
+        else
+            count++;
+    }
+
+    void DecrementCount(MouseEventArgs e)
+    {
+        count--;
+    }
+}
